@@ -2,9 +2,11 @@ package test;
 
 public class Test {
 
+	private static double[] sums;
+
 	public static void main(String[] args) {
 		
-		Test_benign Benign = new Test_benign();
+		//Test_benign Benign = new Test_benign();
 		/*double benign_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\GeneratedLabelledFlows\\TrafficLabelling\\Monday-WorkingHours.pcap_ISCX.csv", " Packet Length Std");
 		double LDAP_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\LDAP.csv", " Packet Length Std");
 		double MSSQL_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\MSSQL.csv", " Packet Length Std");
@@ -22,7 +24,7 @@ public class Test {
 		System.out.println("Portmap: "+Portmap_devStd);
 		System.out.println("Syn: "+Syn_devStd);
 		System.out.println("UDP: "+UDP_devStd);
-		System.out.println("UDPLag: "+UDPLag_devStd);*/
+		System.out.println("UDPLag: "+UDPLag_devStd);
 		
 		double benign_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\GeneratedLabelledFlows\\TrafficLabelling\\Monday-WorkingHours.pcap_ISCX.csv", " ACK Flag Count");
 		double LDAP_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\LDAP.csv", " ACK Flag Count");
@@ -41,7 +43,8 @@ public class Test {
 		System.out.println("Portmap: "+Portmap_devStd);
 		System.out.println("Syn: "+Syn_devStd);
 		System.out.println("UDP: "+UDP_devStd);
-		System.out.println("UDPLag: "+UDPLag_devStd);
+		System.out.println("UDPLag: "+UDPLag_devStd);*/
+
 		
 
 
