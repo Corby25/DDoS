@@ -1,53 +1,64 @@
 package test;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Test {
 
 	private static double[] sums;
 
 	public static void main(String[] args) {
 		
-		//Test_benign Benign = new Test_benign();
-		/*double benign_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\GeneratedLabelledFlows\\TrafficLabelling\\Monday-WorkingHours.pcap_ISCX.csv", " Packet Length Std");
-		double LDAP_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\LDAP.csv", " Packet Length Std");
-		double MSSQL_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\MSSQL.csv", " Packet Length Std");
-		double NetBIOS_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\NetBIOS.csv", " Packet Length Std");
-		double Portmap_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\Portmap.csv", " Packet Length Std");
-		double Syn_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\Syn.csv", " Packet Length Std");
-		double UDP_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\UDP.csv", " Packet Length Std");
-		double UDPLag_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\UDPLag.csv", " Packet Length Std");
-				
-		System.out.println("Comparazione dei valori medi di 'Packet Length Std' nelle varie condizioni di rete:");
-		System.out.println("Traffico normale: "+benign_devStd);;
-		System.out.println("LDAP: "+LDAP_devStd);
-		System.out.println("MSSQL: "+MSSQL_devStd);
-		System.out.println("NetBIOS: "+NetBIOS_devStd);
-		System.out.println("Portmap: "+Portmap_devStd);
-		System.out.println("Syn: "+Syn_devStd);
-		System.out.println("UDP: "+UDP_devStd);
-		System.out.println("UDPLag: "+UDPLag_devStd);
+		FileWriter file = null;
+		try {
+			file = new FileWriter("C:\\Users\\tomma\\Desktop\\Means.csv");
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		double benign_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\GeneratedLabelledFlows\\TrafficLabelling\\Monday-WorkingHours.pcap_ISCX.csv", " ACK Flag Count");
-		double LDAP_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\LDAP.csv", " ACK Flag Count");
-		double MSSQL_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\MSSQL.csv", " ACK Flag Count");
-		double NetBIOS_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\NetBIOS.csv", " ACK Flag Count");
-		double Portmap_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\Portmap.csv", " ACK Flag Count");
-		double Syn_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\Syn.csv", " ACK Flag Count");
-		double UDP_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\UDP.csv", " ACK Flag Count");
-		double UDPLag_devStd = Benign.read("C:\\Users\\tomma\\Downloads\\CSV-03-11\\03-11\\UDPLag.csv", " ACK Flag Count");
-				
-		System.out.println("Comparazione dei valori medi di 'Packet Length Std' nelle varie condizioni di rete:");
-		System.out.println("Traffico normale: "+benign_devStd);;
-		System.out.println("LDAP: "+LDAP_devStd);
-		System.out.println("MSSQL: "+MSSQL_devStd);
-		System.out.println("NetBIOS: "+NetBIOS_devStd);
-		System.out.println("Portmap: "+Portmap_devStd);
-		System.out.println("Syn: "+Syn_devStd);
-		System.out.println("UDP: "+UDP_devStd);
-		System.out.println("UDPLag: "+UDPLag_devStd);*/
-
+		TotalMeans Means = new TotalMeans();
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_DNS.csv");
+		Means.writeHeaders(file);
+		Means.writeMeans(file,"DNS");
 		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_LDAP.csv");
+		Means.writeMeans(file,"LDAP");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_MSSQL.csv");
+		Means.writeMeans(file,"MSSQL");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_NetBIOS.csv");
+		Means.writeMeans(file,"NetBIOS");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_NTP.csv");
+		Means.writeMeans(file,"NTP");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_SNMP.csv");
+		Means.writeMeans(file,"SNMP");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_SSDP.csv");
+		Means.writeMeans(file,"SSDP");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\DrDoS_UDP.csv");
+		Means.writeMeans(file,"UDP");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\Syn.csv");
+		Means.writeMeans(file,"Syn");
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\TFTP.csv");
+		Means.writeMeans(file,"TFTP");
 
-
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\UDPLag.csv");
+		Means.writeMeans(file,"UDPLag");
+	    
+	      
+	    try {
+			file.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }
