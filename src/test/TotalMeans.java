@@ -20,10 +20,10 @@ public class TotalMeans {
 	
 	public TotalMeans() {
 		columnName = new ArrayList<String>();
-		sum = new ArrayList<Double>();
 	}
 	
 	public void calculateMeans(String originFileName) {
+		sum = new ArrayList<Double>();
 		
         try (CSVReader reader = new CSVReader(new FileReader(originFileName))) { 
         	String[] line;
