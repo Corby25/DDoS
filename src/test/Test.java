@@ -52,7 +52,9 @@ public class Test {
 
 		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\UDPLag.csv");
 		Means.writeMeans(file,"UDPLag");
-	    
+		
+		Means.calculateMeans("C:\\Users\\tomma\\Downloads\\CSV-01-12\\01-12\\Monday-WorkingHours.pcap_ISCX.csv");
+		Means.writeMeans(file,"Benign");
 	      
 	    try {
 			file.close();

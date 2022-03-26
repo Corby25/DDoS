@@ -15,7 +15,7 @@ import com.opencsv.exceptions.CsvValidationException;
 public class TotalMeans {
 	ArrayList<String> columnName;
 	ArrayList<Double> sum;
-	int totLines = 0;
+	int totLines;
 
 	
 	public TotalMeans() {
@@ -24,6 +24,7 @@ public class TotalMeans {
 	
 	public void calculateMeans(String originFileName) {
 		sum = new ArrayList<Double>();
+		totLines = 0;
 		
         try (CSVReader reader = new CSVReader(new FileReader(originFileName))) { 
         	String[] line;
